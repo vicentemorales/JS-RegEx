@@ -31,7 +31,13 @@ Expected Output:
 
 */ 
  
-let phoneReg = /write your regex here/
+let phoneReg =/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/g;
+
+let found = sampleApp.match(phoneReg);
+
+console.log(found)
+
+
 
 /* 
 
@@ -51,13 +57,18 @@ Expected Output:
 
 */ 
 
-let emailReg = /write your regex here/
+let emailReg = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/g
 
+let foundEmail = sampleApp.match(emailReg);
+
+console.log(foundEmail)
 /* 
 
 Regular Expression 3: 
 - Format to match: "Status:"
-- Planned usage: Will be used to find where the status of the application is located in the string. Be sure to make the regex insensitive to casing as some applicants like to type in all caps or all lowercase. 
+- Planned usage: Will be used to find where the status of the application 
+is located in the string. Be sure to make the regex insensitive to 
+casing as some applicants like to type in all caps or all lowercase. 
 
 - Hints for regex: What modifier allows casing to be ignored?
 - Hint for testing: What JavaScript method returns the first index where the match is located? 
@@ -67,4 +78,6 @@ Expected Output:
 
 */ 
 
-let statusReg = /write your regex here/
+let statusReg = /status:/i 
+let statusIndex = sampleApp.search(statusReg)
+console.log(statusIndex)
